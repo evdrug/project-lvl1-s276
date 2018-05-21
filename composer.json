@@ -1,0 +1,12 @@
+{
+    "name": "evdrug/brain-games",
+    "bin": ["bin/brain-games"],
+    "description": "brain-games",
+    "authors": [
+        {
+            "name": "evdrug",
+            "email": "druzyakin.e@gmail.com"
+        }
+    ],
+    "require": {}
+}
