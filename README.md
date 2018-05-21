@@ -16,3 +16,5 @@
 **Start game**
 
     brain-even
+    
+ https://asciinema.org/a/WJIbZbzC4uYVjHFQbCliUblD1

@@ -30,16 +30,11 @@ function game()
         }
     }
 
-    resultGame($count, $answer, $name);
-}
-
-function resultGame($count, $answer, $name)
-{
     if (isResponse($count)) {
         line("Congratulations, %s!", $name);
     } else {
-        $correct = $answer === 'yes' ? 'no' : 'yes';
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correct);
+        $correct = $response['answer'] === 'yes' ? 'no' : 'yes';
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $response['answer'], $correct);
         line("Let's try again, %s!", $name);
     }
 }
