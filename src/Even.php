@@ -12,7 +12,7 @@ use function cli\line;
 use function cli\prompt;
 use BrainGames\Cli;
 
-function game()
+function welcome()
 {
     line('Welcome to the Brain Game!');
     line('Answer "yes" if number even otherwise answer "no".');
@@ -21,6 +21,12 @@ function game()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('');
+    return $name;
+}
+
+function game()
+{
+    $name = welcome();
 
     $count = 3;
     while ($count > 0) {
