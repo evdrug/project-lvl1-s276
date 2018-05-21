@@ -24,10 +24,8 @@ function welcome()
     return $name;
 }
 
-function game()
+function game($name)
 {
-    $name = welcome();
-
     $count = 3;
     while ($count > 0) {
         $response = question();
