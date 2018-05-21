@@ -8,6 +8,11 @@
 
 [![Build Status](https://travis-ci.org/evdrug/project-lvl1-s276.svg?branch=master)](https://travis-ci.org/evdrug/project-lvl1-s276)
 
-export PATH=~/.config/composer/vendor/bin:$PATH
+**Install**
 
-composer global require evdrug/brain-games:dev-master
+    export PATH=~/.config/composer/vendor/bin:$PATH
+    composer global require evdrug/brain-games
+
+**Start game**
+
+    brain-even

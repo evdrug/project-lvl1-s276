@@ -14,7 +14,13 @@ use BrainGames\Cli;
 
 function game()
 {
-    $name = Cli\run();
+    line('Welcome to the Brain Game!');
+    line('Answer "yes" if number even otherwise answer "no".');
+    line('');
+
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    line('');
 
     $count = 3;
     while ($count > 0) {
