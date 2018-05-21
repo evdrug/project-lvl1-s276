@@ -8,5 +8,12 @@
             "email": "druzyakin.e@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.9"
+    },
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    }
 }
