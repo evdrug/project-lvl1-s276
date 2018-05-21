@@ -15,33 +15,28 @@ use BrainGames\Cli;
 function game()
 {
     $name = Cli\run();
-    
-    if (isResponse(quiz())) {
-        line("Congratulations, %s!", $name);
-    } else {
-        $correct = $response['answer'] === 'yes' ? 'no' : 'yes';
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $response['answer'], $correct);
-        line("Let's try again, %s!", $name);
-    }
-}
 
-function quiz()
-{
     $count = 3;
     while ($count > 0) {
         $response = question();
+        $number = $response['number'];
+        $answer = $response['answer'];
 
-        if (isEven($response['number']) && $response['answer'] === 'yes') {
-            line('Correct!');
-            $count--;
-        } elseif (!isEven($response['number']) && $response['answer'] === 'no') {
+        if (isEven($number) && $answer === 'yes' || !isEven($number) && $answer === 'no') {
             line('Correct!');
             $count--;
         } else {
             $count = -1;
         }
     }
-    return $count;
+
+    if (isResponse($count)) {
+        line("Congratulations, %s!", $name);
+    } else {
+        $correct = $response['answer'] === 'yes' ? 'no' : 'yes';
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $response['answer'], $correct);
+        line("Let's try again, %s!", $name);
+    }
 }
 
 function question()
