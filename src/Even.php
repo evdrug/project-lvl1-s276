@@ -12,19 +12,20 @@ use function cli\line;
 use function cli\prompt;
 use BrainGames\Cli;
 
-function welcome()
+function game()
 {
-    line('Welcome to the Brain Game!');
-    line('Answer "yes" if number even otherwise answer "no".');
-    line('');
-
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-    line('');
-    return $name;
+    $name = Cli\run();
+    
+    if (isResponse(quiz())) {
+        line("Congratulations, %s!", $name);
+    } else {
+        $correct = $response['answer'] === 'yes' ? 'no' : 'yes';
+        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $response['answer'], $correct);
+        line("Let's try again, %s!", $name);
+    }
 }
 
-function game($name)
+function quiz()
 {
     $count = 3;
     while ($count > 0) {
@@ -40,14 +41,7 @@ function game($name)
             $count = -1;
         }
     }
-
-    if (isResponse($count)) {
-        line("Congratulations, %s!", $name);
-    } else {
-        $correct = $response['answer'] === 'yes' ? 'no' : 'yes';
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $response['answer'], $correct);
-        line("Let's try again, %s!", $name);
-    }
+    return $count;
 }
 
 function question()

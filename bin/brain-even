@@ -5,4 +5,4 @@ require_once  __DIR__.'/../autoload.php';
 
 use BrainGames\Even;
 
-Even\game(Even\welcome());
+Even\game();
