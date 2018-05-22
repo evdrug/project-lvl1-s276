@@ -37,3 +37,11 @@ function round($count, $func)
     }
     return true;
 }
+
+function runGame($conditions, $count, $data)
+{
+    $name = welcome($conditions);
+    $result = round($count, $data);
+
+    return $result ? line("Congratulations, %s!", $name) : line("Let's try again, %s!", $name);
+}

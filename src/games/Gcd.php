@@ -3,31 +3,25 @@
 namespace BrainGames\Gcd;
 
 use BrainGames\Functions;
-use function cli\line;
 
 const COUNT_QUESTIONS = 3;
 const RANDOM_NUM_MIN = 0;
 const RANDOM_NUM_MAX= 100;
+const CONDITIONS = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
-    $name = Functions\welcome('Find the greatest common divisor of given numbers.');
-    $result = Functions\round(COUNT_QUESTIONS, function () {
-        return quizGcd();
-    });
+    $quizGcd = function () {
+        $number1 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
+        $number2 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
 
-    return $result ? line("Congratulations, %s!", $name) : line("Let's try again, %s!", $name);
-}
+        $question = "{$number1} {$number2}";
+        $answer = gcd($number1, $number2);
 
-function quizGcd()
-{
-    $number1 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-    $number2 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
+        return ['question' => $question, 'answer' => $answer];
+    };
 
-    $question = "{$number1} {$number2}";
-    $answer = gcd($number1, $number2);
-
-    return ['question' => $question, 'answer' => $answer];
+    Functions\runGame(CONDITIONS, COUNT_QUESTIONS, $quizGcd);
 }
 
 function gcd($num1, $num2)
