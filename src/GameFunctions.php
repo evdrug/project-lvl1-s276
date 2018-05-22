@@ -24,14 +24,14 @@ function welcome($str)
 
 function question($str)
 {
-    line("Question: %s",$str);
+    line("Question: %s", $str);
     $answer = prompt('Your answer');
     return $answer;
 }
 
 function round($count, $func)
 {
-    for($i = $count; $i > 0; $i--){
+    for ($i = $count; $i > 0; $i--) {
         $result = $func();
         $answer = question($result['question']);
         if ($answer == $result['answer']) {

@@ -27,11 +27,10 @@ function run()
 
 function quizEven()
 {
-    $question = rand(RANDOM_NUM_MIN,RANDOM_NUM_MAX);
+    $question = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
     $answer = isEven($question) ? 'yes' : 'no';
 
-    return ['question' => $question, 'answer' => $answer];;
-
+    return ['question' => $question, 'answer' => $answer];
 }
 
 function isEven(int $number)
