@@ -3,6 +3,6 @@
 <?php
 require_once  __DIR__.'/../autoload.php';
 
-use BrainGames\Even;
+use BrainGames\Calc;
 
-Even\run();
+Calc\run();
