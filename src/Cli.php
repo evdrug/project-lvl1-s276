@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: E.Druzyakin
- * Date: 21.05.18
- * Time: 12:15
- */
+
 namespace BrainGames\Cli;
 
 use function cli\line;

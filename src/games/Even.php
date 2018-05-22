@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: evgesha
- * Date: 21.05.18
- * Time: 22:20
- */
 
 namespace BrainGames\Even;
 

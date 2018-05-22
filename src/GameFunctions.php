@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: E.Druzyakin
- * Date: 22.05.18
- * Time: 10:13
- */
 
 namespace BrainGames\Functions;
 
