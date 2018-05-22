@@ -15,7 +15,7 @@ function run()
         $number1 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $number2 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $operators = ['+', '-', '*'];
-        $operation = $operators[rand(0, count($operators)-1)];
+        $operation = $operators[rand(0, count($operators) - 1)];
 
         $question = '';
         $answer = '';

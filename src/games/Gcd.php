@@ -39,7 +39,7 @@ function gcd($num1, $num2)
     }
 
     if ($numMax % $numMin !== 0) {
-        for ($i = floor($numMin/2); $i > 0; $i--) {
+        for ($i = floor($numMin / 2); $i > 0; $i--) {
             if ($numMin % $i === 0 && $numMax % $i === 0) {
                 return $i;
             }
