@@ -32,11 +32,10 @@ function quizGcd()
 
 function gcd($num1, $num2)
 {
-    $num1 = abs($num1);
-    $num2 = abs($num2);
+    $number = [abs($num1), abs($num2)];
 
-    $numMax = max($num1, $num2);
-    $numMin = min($num1, $num2);
+    $numMax = max($number);
+    $numMin = min($number);
 
     if ($numMin === 0) {
         if ($numMax === 0) {
