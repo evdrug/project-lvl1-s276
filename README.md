@@ -15,6 +15,8 @@
 
 **Start game**
 
-    brain-even
+    brain-even - Answer "yes" if number even otherwise answer "no".
+    brain-calc - What is the result of the expression?
+    brain-gcd - Find the greatest common divisor of given numbers.
     
  https://asciinema.org/a/WJIbZbzC4uYVjHFQbCliUblD1
