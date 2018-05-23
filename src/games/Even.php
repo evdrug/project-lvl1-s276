@@ -12,11 +12,15 @@ function run()
 {
     $quizEven = function () {
         $question = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $answer = isEven($question) ? 'yes' : 'no';
 
-        return ['question' => $question, 'answer' => $answer];
+        return ['question' => $question, 'answer' => getAnswer($question)];
     };
     Functions\runGame(CONDITIONS, $quizEven);
+}
+
+function getAnswer($question)
+{
+    return isEven($question) ? 'yes' : 'no';
 }
 
 function isEven(int $number)

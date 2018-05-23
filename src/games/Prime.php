@@ -12,12 +12,17 @@ function run()
 {
     $quizPrime = function () {
         $question = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $answer = isPrime($question) ? 'yes' : 'no';
 
-        return ['question' => $question, 'answer' => $answer];
+
+        return ['question' => $question, 'answer' => getAnswer($question)];
     };
 
     Functions\runGame(CONDITIONS, $quizPrime);
+}
+
+function getAnswer($question)
+{
+    return isPrime($question) ? 'yes' : 'no';
 }
 
 function isPrime($number)
