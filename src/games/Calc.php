@@ -33,7 +33,7 @@ function run()
                 $answer = $number1 * $number2;
                 break;
         }
-        return ['question' => $question, 'answer' => (string)$answer];
+        return ['question' => $question, 'answer' => $answer];
     };
 
     Core\runGame(DESCRIPTION, $quizCalc);

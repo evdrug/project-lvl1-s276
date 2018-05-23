@@ -14,7 +14,7 @@ function game($func)
         line("Question: %s", $result['question']);
         $answer = prompt('Your answer');
 
-        if ($answer === $result['answer']) {
+        if ($answer === (string)$result['answer']) {
             line('Correct!');
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $result['answer']);

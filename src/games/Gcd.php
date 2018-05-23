@@ -15,10 +15,12 @@ function run()
         $number2 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
 
         $gcd = function ($number1, $number2) {
-            while ($number1 != $number2)
-            {
-                if ($number1 > $number2) $number1 =  $number1 - $number2;
-                else $number2 = $number2 - $number1;
+            while ($number1 != $number2) {
+                if ($number1 > $number2) {
+                    $number1 =  $number1 - $number2;
+                } else {
+                    $number2 = $number2 - $number1;
+                }
             }
             return $number2;
         };
@@ -26,7 +28,7 @@ function run()
         $question = "{$number1} {$number2}";
         $answer = $gcd($number1, $number2);
 
-        return ['question' => $question, 'answer' => (string)$answer];
+        return ['question' => $question, 'answer' => $answer];
     };
 
     Core\runGame(DESCRIPTION, $quizGcd);
