@@ -18,6 +18,8 @@
     brain-even - Answer "yes" if number even otherwise answer "no".
     brain-calc - What is the result of the expression?
     brain-gcd - Find the greatest common divisor of given numbers.
-    brain-balance - Balance the given number..
+    brain-balance - Balance the given number.
+    brain-progression - What number is missing in this progression?
+    brain-prime - Answer "yes" if prime number otherwise answer "no".
     
  https://asciinema.org/a/WJIbZbzC4uYVjHFQbCliUblD1

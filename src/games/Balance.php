@@ -1,10 +1,9 @@
 <?php
 
-namespace BrainGames\Balance;
+namespace BrainGames\Games\Balance;
 
 use BrainGames\Functions;
 
-const COUNT_QUESTIONS = 3;
 const RANDOM_NUM_MIN = 10;
 const RANDOM_NUM_MAX= 9999;
 const CONDITIONS = 'Balance the given number.';
@@ -19,7 +18,7 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, COUNT_QUESTIONS, $quizBalance);
+    Functions\runGame(CONDITIONS, $quizBalance);
 }
 
 function normalizeNumb($arr)

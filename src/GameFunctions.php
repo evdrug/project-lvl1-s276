@@ -5,6 +5,8 @@ namespace BrainGames\Functions;
 use function cli\line;
 use function cli\prompt;
 
+const COUNT_QUESTIONS = 3;
+
 function welcome($str)
 {
     line('Welcome to the Brain Game!');
@@ -23,9 +25,9 @@ function question($str)
     return $answer;
 }
 
-function round($count, $func)
+function round($func)
 {
-    for ($i = $count; $i > 0; $i--) {
+    for ($i = COUNT_QUESTIONS; $i > 0; $i--) {
         $result = $func();
         $answer = question($result['question']);
         if ($answer == $result['answer']) {
@@ -38,10 +40,10 @@ function round($count, $func)
     return true;
 }
 
-function runGame($conditions, $count, $data)
+function runGame($conditions, $data)
 {
     $name = welcome($conditions);
-    $result = round($count, $data);
+    $result = round($data);
 
     return $result ? line("Congratulations, %s!", $name) : line("Let's try again, %s!", $name);
 }

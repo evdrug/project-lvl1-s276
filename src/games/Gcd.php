@@ -1,10 +1,9 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace BrainGames\Games\Gcd;
 
 use BrainGames\Functions;
 
-const COUNT_QUESTIONS = 3;
 const RANDOM_NUM_MIN = 0;
 const RANDOM_NUM_MAX= 100;
 const CONDITIONS = 'Find the greatest common divisor of given numbers.';
@@ -21,7 +20,7 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, COUNT_QUESTIONS, $quizGcd);
+    Functions\runGame(CONDITIONS, $quizGcd);
 }
 
 function gcd($num1, $num2)

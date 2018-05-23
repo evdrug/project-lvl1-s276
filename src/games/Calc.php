@@ -1,12 +1,11 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games\Calc;
 
 use BrainGames\Functions;
 
-const COUNT_QUESTIONS = 3;
 const RANDOM_NUM_MIN = 1;
-const RANDOM_NUM_MAX= 10;
+const RANDOM_NUM_MAX= 100;
 const CONDITIONS = 'What is the result of the expression?';
 
 function run()
@@ -37,5 +36,5 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, COUNT_QUESTIONS, $quizCalc);
+    Functions\runGame(CONDITIONS, $quizCalc);
 }

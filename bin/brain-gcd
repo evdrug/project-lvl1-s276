@@ -3,6 +3,6 @@
 <?php
 require_once  __DIR__.'/../autoload.php';
 
-use BrainGames\Gcd;
+use BrainGames\Games\Gcd;
 
 Gcd\run();

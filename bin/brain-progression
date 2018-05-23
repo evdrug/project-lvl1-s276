@@ -3,6 +3,6 @@
 <?php
 require_once  __DIR__.'/../autoload.php';
 
-use BrainGames\Games\Balance;
+use BrainGames\Games\Progression;
 
-Balance\run();
+Progression\run();
