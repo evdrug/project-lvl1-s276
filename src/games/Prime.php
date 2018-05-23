@@ -11,23 +11,23 @@ const CONDITIONS = 'Answer "yes" if prime number otherwise answer "no".';
 function run()
 {
     $quizPrime = function () {
-        $number = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $answer = isPrime($number) ? 'yes' : 'no';
+        $question = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
+        $answer = isPrime($question) ? 'yes' : 'no';
 
-        return ['question' => $number, 'answer' => $answer];
+        return ['question' => $question, 'answer' => $answer];
     };
 
     Functions\runGame(CONDITIONS, $quizPrime);
 }
 
-function isPrime($numb)
+function isPrime($number)
 {
-    if ($numb <= 1) {
+    if ($number <= 1) {
         return false;
     }
 
-    for ($i = 2; $i < $numb / 2; $i++) {
-        if ($numb % $i === 0) {
+    for ($i = 2; $i < $number / 2; $i++) {
+        if ($number % $i === 0) {
             return false;
         }
     }

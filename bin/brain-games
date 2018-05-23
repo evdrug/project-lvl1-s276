@@ -3,6 +3,6 @@
 <?php
 require_once  __DIR__.'/../autoload.php';
 
-use BrainGames\Games\Cli;
+use BrainGames\Cli;
 
 Cli\run();

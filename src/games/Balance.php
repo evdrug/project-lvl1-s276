@@ -21,16 +21,16 @@ function run()
     Functions\runGame(CONDITIONS, $quizBalance);
 }
 
-function normalizeNumb($arr)
+function normalizeNumb($arrQuestion)
 {
-    sort($arr);
-    $countArr = count($arr) - 1;
+    sort($arrQuestion);
+    $countArr = count($arrQuestion) - 1;
 
-    if ($arr[0] + 1 >= $arr[$countArr]) {
-        return $arr;
+    if ($arrQuestion[0] + 1 >= $arrQuestion[$countArr]) {
+        return $arrQuestion;
     }
 
-    $arr[$countArr] = $arr[$countArr] - 1;
-    $arr[0] = $arr[0] + 1;
-    return normalizeNumb($arr);
+    $arrQuestion[$countArr] = $arrQuestion[$countArr] - 1;
+    $arrQuestion[0] = $arrQuestion[0] + 1;
+    return normalizeNumb($arrQuestion);
 }

@@ -12,7 +12,7 @@ function run()
 {
     $quizProgression = function () {
         $numberStart = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $step= rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
+        $step = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $arrQuestion  = [$numberStart];
 
         for ($i = 1; $i < 10; $i++) {
