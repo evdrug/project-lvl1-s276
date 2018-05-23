@@ -6,7 +6,7 @@ use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 1;
 const RANDOM_NUM_MAX= 100;
-const CONDITIONS = 'Answer "yes" if number even otherwise answer "no".';
+const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function run()
 {
@@ -23,5 +23,5 @@ function run()
 
         return ['question' => $question, 'answer' => $getAnswer($question)];
     };
-    Core\runGame(CONDITIONS, $quizEven);
+    Core\runGame(DESCRIPTION, $quizEven);
 }

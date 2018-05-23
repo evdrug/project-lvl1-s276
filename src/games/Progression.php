@@ -6,25 +6,27 @@ use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 0;
 const RANDOM_NUM_MAX= 100;
-const CONDITIONS = 'What number is missing in this progression?';
+const LENGTH_OF_PROGRESSION = 10;
+const DESCRIPTION = 'What number is missing in this progression?';
 
 function run()
 {
     $quizProgression = function () {
-        $numberStart = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
+        $startNumber = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $step = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $arrQuestion  = [$numberStart];
+        $numberInProgression = rand(1, LENGTH_OF_PROGRESSION) - 1;
+        $arrQuestion  = [$startNumber];
 
-        for ($i = 1; $i < 10; $i++) {
+        for ($i = 1; $i < LENGTH_OF_PROGRESSION; $i++) {
             $arrQuestion[] = $arrQuestion[$i - 1] + $step;
         }
 
-        $answer = $arrQuestion[5];
-        $arrQuestion[5] = '..';
+        $answer = $arrQuestion[$numberInProgression];
+        $arrQuestion[$numberInProgression] = '..';
         $question = join(' ', $arrQuestion);
 
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Core\runGame(CONDITIONS, $quizProgression);
+    Core\runGame(DESCRIPTION, $quizProgression);
 }

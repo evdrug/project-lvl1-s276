@@ -6,12 +6,12 @@ use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 1;
 const RANDOM_NUM_MAX= 100;
-const CONDITIONS = 'What is the result of the expression?';
+const DESCRIPTION = 'What is the result of the expression?';
 
 function run()
 {
     $quizCalc = function () {
-        $number1 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
+        $number1 = 1;
         $number2 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $operators = ['+', '-', '*'];
         $operation = $operators[rand(0, count($operators) - 1)];
@@ -33,8 +33,8 @@ function run()
                 $answer = $number1 * $number2;
                 break;
         }
-        return ['question' => $question, 'answer' => $answer];
+        return ['question' => $question, 'answer' => (string)$answer];
     };
 
-    Core\runGame(CONDITIONS, $quizCalc);
+    Core\runGame(DESCRIPTION, $quizCalc);
 }

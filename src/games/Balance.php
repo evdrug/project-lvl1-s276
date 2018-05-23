@@ -6,7 +6,7 @@ use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 10;
 const RANDOM_NUM_MAX= 9999;
-const CONDITIONS = 'Balance the given number.';
+const DESCRIPTION = 'Balance the given number.';
 
 function run()
 {
@@ -18,7 +18,7 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Core\runGame(CONDITIONS, $quizBalance);
+    Core\runGame(DESCRIPTION, $quizBalance);
 }
 
 function normalizeNumb($arrQuestion)

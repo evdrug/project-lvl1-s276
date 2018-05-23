@@ -6,7 +6,7 @@ use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 0;
 const RANDOM_NUM_MAX= 100;
-const CONDITIONS = 'Find the greatest common divisor of given numbers.';
+const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 function run()
 {
@@ -14,36 +14,20 @@ function run()
         $number1 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $number2 = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
 
-        $question = "{$number1} {$number2}";
-        $answer = gcd($number1, $number2);
+        $gcd = function ($number1, $number2) {
+            while ($number1 != $number2)
+            {
+                if ($number1 > $number2) $number1 =  $number1 - $number2;
+                else $number2 = $number2 - $number1;
+            }
+            return $number2;
+        };
 
-        return ['question' => $question, 'answer' => $answer];
+        $question = "{$number1} {$number2}";
+        $answer = $gcd($number1, $number2);
+
+        return ['question' => $question, 'answer' => (string)$answer];
     };
 
-    Core\runGame(CONDITIONS, $quizGcd);
-}
-
-function gcd($num1, $num2)
-{
-    $number = [abs($num1), abs($num2)];
-
-    $numMax = max($number);
-    $numMin = min($number);
-
-    if ($numMin === 0) {
-        if ($numMax === 0) {
-            return 1;
-        }
-        return $numMax;
-    }
-
-    if ($numMax % $numMin !== 0) {
-        for ($i = floor($numMin / 2); $i > 0; $i--) {
-            if ($numMin % $i === 0 && $numMax % $i === 0) {
-                return $i;
-            }
-        }
-    } else {
-        return $numMin;
-    }
+    Core\runGame(DESCRIPTION, $quizGcd);
 }
