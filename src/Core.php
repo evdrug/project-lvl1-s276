@@ -9,7 +9,7 @@ const COUNT_QUESTIONS = 3;
 
 function game($func)
 {
-    for ($i = COUNT_QUESTIONS; $i > 0; $i--) {
+    for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $result = $func();
         line("Question: %s", $result['question']);
         $answer = prompt('Your answer');
