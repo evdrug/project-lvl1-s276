@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Progression;
 
-use BrainGames\Functions;
+use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 0;
 const RANDOM_NUM_MAX= 100;
@@ -26,5 +26,5 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, $quizProgression);
+    Core\runGame(CONDITIONS, $quizProgression);
 }

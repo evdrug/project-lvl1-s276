@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Calc;
 
-use BrainGames\Functions;
+use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 1;
 const RANDOM_NUM_MAX= 100;
@@ -36,5 +36,5 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, $quizCalc);
+    Core\runGame(CONDITIONS, $quizCalc);
 }

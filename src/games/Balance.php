@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Balance;
 
-use BrainGames\Functions;
+use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 10;
 const RANDOM_NUM_MAX= 9999;
@@ -18,7 +18,7 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, $quizBalance);
+    Core\runGame(CONDITIONS, $quizBalance);
 }
 
 function normalizeNumb($arrQuestion)

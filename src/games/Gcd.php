@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Gcd;
 
-use BrainGames\Functions;
+use BrainGames\Core;
 
 const RANDOM_NUM_MIN = 0;
 const RANDOM_NUM_MAX= 100;
@@ -20,7 +20,7 @@ function run()
         return ['question' => $question, 'answer' => $answer];
     };
 
-    Functions\runGame(CONDITIONS, $quizGcd);
+    Core\runGame(CONDITIONS, $quizGcd);
 }
 
 function gcd($num1, $num2)
