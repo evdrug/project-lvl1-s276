@@ -18,19 +18,20 @@
 
 ## Start game
 
-- brain-even - Answer "yes" if number even otherwise answer "no".
+- brain-even - Answer "yes" if number even otherwise answer "no".  
 https://asciinema.org/a/saZl4fqTba2WX0EvWwzD3meVO       
     
-- brain-calc - What is the result of the expression?
+- brain-calc - What is the result of the expression?  
 https://asciinema.org/a/E7spQU1XcxaRaov7X9ISWz7YO
 
-- brain-gcd - Find the greatest common divisor of given numbers.
+- brain-gcd - Find the greatest common divisor of given numbers.  
 https://asciinema.org/a/beyCSSNlSaT4VIRKbF0RupzqJ
 
-- brain-balance - Balance the given number.
+- brain-balance - Balance the given number.  
 https://asciinema.org/a/TztZnj8j2jca6H2LzIC4cw3SK
 
-- brain-progression - What number is missing in this progression?
+- brain-progression - What number is missing in this progression?  
 https://asciinema.org/a/5uGoBobpgz4QeLyAP0BSBlYnX
-- brain-prime - Answer "yes" if prime number otherwise answer "no".
+
+- brain-prime - Answer "yes" if prime number otherwise answer "no".  
 https://asciinema.org/a/Q5flYlTqxW1W9MYasYyx01uOR
