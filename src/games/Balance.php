@@ -20,20 +20,24 @@ function run()
     Core\runGame(DESCRIPTION, $quizBalance);
 }
 
-function normalizeNumb($question)
+function normalizeNumb($number)
 {
-    $iter = function ($items) use (&$iter) {
-        sort($items);
-        $countItems = count($items) - 1;
+    $numberToString = (string)$number;
+    $symbolsCount = strlen($numberToString);
+    $sumOfNumber = array_sum(str_split($numberToString));
+    $integerNumber = floor($sumOfNumber / $symbolsCount);
+    $remain = $sumOfNumber % $symbolsCount;
+    $result = [];
 
-        if ($items[0] + 1 >= $items[$countItems]) {
-            return $items;
+    for($i = 0; $i < $symbolsCount; $i++) {
+        if($remain > 0) {
+            $result[] = $integerNumber + 1;
+            $remain--;
+            continue;
         }
+        $result[] = $integerNumber;
+    }
 
-        $items[$countItems] = $items[$countItems] - 1;
-        $items[0] = $items[0] + 1;
-        return $iter($items);
-    };
-
-    return join($iter(str_split($question)));
+    sort($result);
+    return join($result);
 }

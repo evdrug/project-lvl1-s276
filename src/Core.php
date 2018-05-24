@@ -10,14 +10,14 @@ const COUNT_QUESTIONS = 3;
 function game($func)
 {
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
-        $result = $func();
-        line("Question: %s", $result['question']);
-        $answer = prompt('Your answer');
+        ['question' => $question, 'answer' => $answer] = $func();
+        line("Question: %s", $question);
+        $userAnswer = prompt('Your answer');
 
-        if ($answer === $result['answer']) {
+        if ($userAnswer === $answer) {
             line('Correct!');
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $result['answer']);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $userAnswer, $answer);
             return false;
         }
     }
