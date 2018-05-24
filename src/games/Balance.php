@@ -12,8 +12,7 @@ function run()
 {
     $quizBalance = function () {
         $question = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $arrQuestion = str_split($question);
-        $answer = join(normalizeNumb($arrQuestion));
+        $answer = normalizeNumb($question);
 
         return ['question' => $question, 'answer' => $answer];
     };
@@ -21,16 +20,20 @@ function run()
     Core\runGame(DESCRIPTION, $quizBalance);
 }
 
-function normalizeNumb($arrQuestion)
+function normalizeNumb($question)
 {
-    sort($arrQuestion);
-    $countArr = count($arrQuestion) - 1;
+    $iter = function ($items) use (&$iter) {
+        sort($items);
+        $countItems = count($items) - 1;
 
-    if ($arrQuestion[0] + 1 >= $arrQuestion[$countArr]) {
-        return $arrQuestion;
-    }
+        if ($items[0] + 1 >= $items[$countItems]) {
+            return $items;
+        }
 
-    $arrQuestion[$countArr] = $arrQuestion[$countArr] - 1;
-    $arrQuestion[0] = $arrQuestion[0] + 1;
-    return normalizeNumb($arrQuestion);
+        $items[$countItems] = $items[$countItems] - 1;
+        $items[0] = $items[0] + 1;
+        return $iter($items);
+    };
+
+    return join($iter(str_split($question)));
 }

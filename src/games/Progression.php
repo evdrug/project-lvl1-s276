@@ -14,17 +14,17 @@ function run()
     $quizProgression = function () {
         $startNumber = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
         $step = rand(RANDOM_NUM_MIN, RANDOM_NUM_MAX);
-        $numberInProgression = rand(1, LENGTH_OF_PROGRESSION) - 1;
-        var_dump($numberInProgression);
-        $arrQuestion  = [$startNumber];
+        $indexOfHiddenNumber = rand(1, LENGTH_OF_PROGRESSION) - 1;
+
+        $listProgression  = [$startNumber];
 
         for ($i = 1; $i < LENGTH_OF_PROGRESSION; $i++) {
-            $arrQuestion[] = $arrQuestion[$i - 1] + $step;
+            $listProgression[] = $listProgression[$i - 1] + $step;
         }
 
-        $answer = $arrQuestion[$numberInProgression];
-        $arrQuestion[$numberInProgression] = '..';
-        $question = join(' ', $arrQuestion);
+        $answer = $listProgression[$indexOfHiddenNumber];
+        $listProgression[$indexOfHiddenNumber] = '..';
+        $question = join(' ', $listProgression);
 
         return ['question' => $question, 'answer' => $answer];
     };
