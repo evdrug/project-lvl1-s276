@@ -25,17 +25,12 @@ function run()
 
 function gcd($number1, $number2)
 {
-
-    if ($number1 === 0 || $number2 === 0) {
-        return 1;
-    }
-
-    while ($number1 != $number2) {
-        if ($number1 > $number2) {
-            $number1 =  $number1 - $number2;
+    while ($number1 != 0 && $number2 != 0) {
+        if ($number1 > $number1) {
+            $number1 = $number1 % $number2;
         } else {
-            $number2 = $number2 - $number1;
+            $number2 = $number2 % $number1;
         }
     }
-    return $number2;
+    return $number1 + $number2;
 }
