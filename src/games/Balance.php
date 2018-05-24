@@ -29,8 +29,8 @@ function normalizeNumb($number)
     $remain = $sumOfNumber % $symbolsCount;
     $result = [];
 
-    for($i = 0; $i < $symbolsCount; $i++) {
-        if($remain > 0) {
+    for ($i = 0; $i < $symbolsCount; $i++) {
+        if ($remain > 0) {
             $result[] = $integerNumber + 1;
             $remain--;
             continue;
